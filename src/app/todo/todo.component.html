@@ -1,0 +1,46 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="div-mat-card col-md-3">
+      <div>
+        <mat-card class="mt-3">
+          <form [formGroup]="todoForm">
+            <mat-form-field appearance="outline">
+              <mat-label>Titulo</mat-label>
+              <input formControlName="item" matInput placeholder="Placeholder">
+              <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+              <mat-hint>adc titulo tarefa</mat-hint>
+            </mat-form-field>
+            <button mat-raised-button [disabled]="todoForm.invalid" color="accent">Adc</button>
+          </form>
+        </mat-card>
+      </div>
+    </div>
+    <div class="col-md-9">
+      <div cdkDropListGroup>
+        <div class="div-row">
+        <div class="col-md-4">
+          <!-- ToDo -->
+          <div class="example-container">
+            <h2>To do</h2>
+
+            <div
+              cdkDropList
+              [cdkDropListData]="tasks"
+              class="example-list"
+              (cdkDropListDropped)="drop($event)">
+              <div class="example-box" *ngFor="let item of tasks" cdkDrag>{{item}}</div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <!-- Progresso -->
+        </div>
+        <div class="col-md-4">
+          <!-- Finalizado -->
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</div>

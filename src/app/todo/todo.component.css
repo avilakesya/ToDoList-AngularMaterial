@@ -1,0 +1,8 @@
+.div-mat-card {
+  background: #323536;
+  height: 93vh;
+}
+
+:host .mat-form-field{
+  width: 100%;
+}
