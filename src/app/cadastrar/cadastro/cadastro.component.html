@@ -1,0 +1,47 @@
+<h1 class="container-fluid title">Cadastrar Tarefa</h1>
+
+<div class="col-md-12 task">
+  <div class="col-md-2"></div>
+  <div class="col-md-8">
+
+    <mat-card class="col-md-12 card">
+      <form [formGroup]="todoForm">
+        <mat-form-field appearance="outline">
+          <mat-label>Título da tarefa</mat-label>
+          <input formControlName="titulo" matInput placeholder="Título" />
+          <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Descrição da tarefa</mat-label>
+          <input formControlName="descricao" matInput placeholder="Descrição da Tarefa" />
+          <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+          <mat-label>Data completa da tarefa</mat-label>
+          <input type="date" formControlName="dataCompleta" matInput placeholder="Descrição da Tarefa" />
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+          <mat-label>Categoria da Tarefa</mat-label>
+          <mat-select formControlName="categoria">
+            <mat-option *ngFor="let categoria of categorias" [value]="categoria.valor">
+              {{ categoria.viewValor }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <a class="link" [routerLink]="['']" mat-raised-button color="warn">
+          Cancelar
+        </a>
+
+        <button class="button" mat-raised-button
+          [disabled]="todoForm.invalid" (click)="addTask()" color="primary">
+          Adicionar
+        </button>
+
+      </form>
+    </mat-card>
+  </div>
+</div>
