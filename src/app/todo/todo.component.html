@@ -10,7 +10,7 @@
           <div cdkDropList [cdkDropListData]="taskFacil" class="list" (cdkDropListDropped)="drop($event)">
             <div class="bigger-box" *ngFor="let task of tasks" cdkDrag>
               <div class="box" *ngIf="task.categoria == 1">
-                <b>Título: </b> {{ task.titulo }} <b>Descrição: </b>
+                <b>Título: </b> {{ task.titulo }} <b>Descrição:</b>
                 {{ task.descricao }} <b>Data de Conclusão: </b>
                 {{ task.dataCompleta }}
               </div>
